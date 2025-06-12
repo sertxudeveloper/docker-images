@@ -26,7 +26,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Install cosign
-        uses: sigstore/cosign-installer@59acb6260d9c0ba8f4a2f9d9b48431a222b68e20 #v3.5.0
+        uses: sigstore/cosign-installer@v3
         with:
           cosign-release: 'v2.2.4'
 
@@ -45,8 +45,6 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=${{ matrix.image }}:buildcache
-          cache-to: type=registry,ref=${{ matrix.image }}:buildcache,mode=max
 
       - name: Sign the published Docker image
         run: echo "${TAGS}" | xargs -I {} cosign sign --yes {}@${DIGEST}
