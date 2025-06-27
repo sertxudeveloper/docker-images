@@ -3,7 +3,7 @@ FROM serversideup/php:8.3-fpm-nginx
 USER root
 
 # Install PHP extensions
-RUN install-php-extensions intl bcmath exif
+RUN install-php-extensions intl bcmath exif excimer
 
 # Install Puppeteer dependencies
 RUN apt-get update && \
