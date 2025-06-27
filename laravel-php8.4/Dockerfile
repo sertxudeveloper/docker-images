@@ -3,7 +3,7 @@ FROM serversideup/php:8.4-fpm-nginx
 USER root
 
 # Install PHP extensions
-RUN install-php-extensions intl bcmath exif gd imagick
+RUN install-php-extensions intl bcmath exif gd imagick excimer
 
 # Install Ghostscript
 RUN apt-get update && \
