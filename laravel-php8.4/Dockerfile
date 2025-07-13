@@ -23,9 +23,9 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Node.js
-RUN apt-get update && \
-    apt-get install -yq nodejs npm && \
-    rm -rf /var/lib/apt/lists/*
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash && \
+    \. "$HOME/.nvm/nvm.sh" && \
+    nvm install 22
 
 WORKDIR /var/www/html
 
