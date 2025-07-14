@@ -18,7 +18,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Node.js
-RUN curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash - \
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
     apt-get install -y nodejs
 
 WORKDIR /var/www/html
