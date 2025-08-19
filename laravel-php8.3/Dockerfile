@@ -3,7 +3,12 @@ FROM serversideup/php:8.3-fpm-nginx
 USER root
 
 # Install PHP extensions
-RUN install-php-extensions intl bcmath exif excimer
+RUN install-php-extensions intl bcmath exif gd imagick excimer
+
+# Install Git & Ghostscript
+RUN apt-get update && \
+    apt-get install -yq git ghostscript && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install Puppeteer dependencies
 RUN apt-get update && \
