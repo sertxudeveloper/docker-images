@@ -15,6 +15,9 @@ jobs:
     strategy:
       matrix:
         include:
+          - image: sertxudeveloper/laravel-php8.5
+            dockerfile: laravel-php8.5/Dockerfile
+            
           - image: sertxudeveloper/laravel-php8.4
             dockerfile: laravel-php8.4/Dockerfile
 
