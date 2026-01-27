@@ -1,4 +1,4 @@
-FROM serversideup/php:8.5-fpm-nginx
+FROM serversideup/php-dev:646-fpm-nginx
 
 USER root
 
